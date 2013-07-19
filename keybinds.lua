@@ -6,8 +6,8 @@ local keybinds = {}
 
 -- Audio
 local keyboard = awful.util.table.join(
-	awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -q sset Master 3%+") end),
-	awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -q sset Master 3%-") end)
+	awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -q sset Master 5%+") end),
+	awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -q sset Master 5%-") end)
 )
 
 -- Window Management
