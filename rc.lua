@@ -241,7 +241,7 @@ awful.rules.rules = {
       --  end
       --end
     --},
-    { rule = { class = "clementine" },
+    { rule = { class = "Clementine" },
       properties = { tag = tags.rules["music"] } },
     { rule = { class = "Exe" },
       properties = { floating = true } }

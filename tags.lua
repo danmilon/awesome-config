@@ -22,7 +22,7 @@ else
   tags.rules = {
     email = tags[2][3],
     im = tags[2][2],
-    music = tags[2][4]
+    music = tags[2][5]
   }
 end
 
