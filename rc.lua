@@ -1,5 +1,6 @@
 modkey = "Mod4"
 
+require("lgi").PangoCairo.font_map_get_default():set_resolution(196)
 
 -- Standard awesome library
 local gears = require("gears")
