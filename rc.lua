@@ -220,8 +220,6 @@ awful.rules.rules = {
                      focus = true,
                      keys = clientkeys,
                      buttons = clientbuttons } },
-    { rule = { class = "Thunderbird" },
-      properties = { tag = tags.rules["email"] } },
     { rule = { class = "Skype" },
       properties = { tag = tags.rules["im"] } },
     { rule = { class = "Pidgin" },
