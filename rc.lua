@@ -243,7 +243,7 @@ awful.rules.rules = {
     --},
     { rule = { class = "Clementine" },
       properties = { tag = tags.rules["music"] } },
-    { rule = { class = "Exe" },
+    { rule = { class = "Plugin-container" },
       properties = { floating = true } }
 }
 -- }}}
