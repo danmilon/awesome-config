@@ -226,6 +226,13 @@ awful.rules.rules = {
       properties = { tag = tags.rules["im"] } },
     { rule = { class = "Pidgin" },
       properties = { tag = tags.rules["im"] } },
+    { rule = {},
+      callback = function (c)
+        if c.name ~= nil and string.find(c.name, "mu4e") ~= nil then
+          awful.client.movetotag(tags.rules["email"], c)
+        end
+      end
+    },
       --callback = function (c)
       --  c.tag = tags[2][2]
       --  naughty.notify({ text = c.class })
