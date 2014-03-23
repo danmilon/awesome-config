@@ -10,6 +10,13 @@ local keyboard = awful.util.table.join(
 	awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -q sset Master 5%-") end)
 )
 
+-- Backlight
+keyboard = awful.util.table.join(
+	 awful.key({ }, "XF86MonBrightnessUp", function () awful.util.spawn("xbacklight -inc 25") end),
+	 awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 25") end),
+	 awful.key({ }, "XF86KbdBrightnessUp", function () awful.util.spawn("kbdlight up") end),
+	 awful.key({ }, "XF86KbdBrightnessDown", function () awful.util.spawn("kbdlight down") end))
+
 -- Window Management
 keyboard = awful.util.table.join(keyboard,
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
