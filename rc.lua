@@ -15,6 +15,8 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 
+local assault = require("assault")
+
 local keybinds = require("./keybinds")
 local tags     = require("./tags")
 local layouts  = require("./layouts")
@@ -101,7 +103,7 @@ myradiobutton.switch = function ()
     local pgrep = assert(io.popen('pgrep -n mplayer', 'r'))
     myradiobutton.pid = pgrep:read('*all')
     myradiobutton.widget:set_markup(' <span color="green">ON AIR</span> ')
-    
+
     pgrep:close()
   else
     os.execute('kill ' .. myradiobutton.pid)
@@ -115,6 +117,15 @@ myradiobutton.widget:buttons(awful.util.table.join(
 ))
 
 -- Create a wibox for each screen and add it
+
+myassault = assault({
+    critical_level = 0.20,
+    critical_color = "#ff0000",
+    charging_color = "#00ff00",
+    battery = "BAT0",
+    adapter = "ADP1"
+})
+
 mywibox = {}
 mypromptbox = {}
 mylayoutbox = {}
@@ -191,8 +202,9 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
-    
+
     right_layout:add(myradiobutton.widget)
+    right_layout:add(myassault)
     right_layout:add(mytextclock)
     right_layout:add(kbdswitcher.widget)
     right_layout:add(mylayoutbox[s])
