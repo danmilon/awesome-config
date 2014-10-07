@@ -74,9 +74,7 @@ keyboard = awful.util.table.join(keyboard,
                   mypromptbox[mouse.screen].widget,
                   awful.util.eval, nil,
                   awful.util.getdir("cache") .. "/history_eval")
-              end),
-    -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end)
+              end)
 )
 
 -- Compute the maximum number of digit we need, limited to 9
