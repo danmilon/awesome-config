@@ -11,7 +11,7 @@ local keyboard = awful.util.table.join(
 )
 
 -- Backlight
-keyboard = awful.util.table.join(
+keyboard = awful.util.table.join(keyboard,
 	 awful.key({ }, "XF86MonBrightnessUp", function () awful.util.spawn("xbacklight -inc 25") end),
 	 awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 25") end),
 	 awful.key({ }, "XF86KbdBrightnessUp", function () awful.util.spawn("kbdlight up") end),
